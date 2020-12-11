@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<type name="Magento\Framework\Locale\TranslatedLists">
+		<plugin disabled="false" name="Theshreyas_RenameCountry_Plugin_Magento_Framework_Locale_TranslatedLists" sortOrder="10" type="Theshreyas\RenameCountry\Plugin\Magento\Framework\Locale\TranslatedLists"/>
+	</type>
+</config>
