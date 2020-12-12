@@ -1,0 +1,7 @@
+﻿type Query {
+    product (
+          ids: [ID!]! @doc(description: "Product IDs.")
+    ): [ProductInterface]
+    @resolver(class: "Growisto\\CatalogGraphQl\\Model\\Resolver\\ProductId") @doc(description: "The product query fetches products that match the specified IDs.") @cache(cacheIdentity: "Growisto\\CatalogGraphQl\\Model\\Resolver\\Product\\ProductIdIdentity")
+  
+}
