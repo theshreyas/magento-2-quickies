@@ -1,18 +1,15 @@
 # magento-2-quickies
-work-in-progress
 
+## Work In Progress.. Please contribute
 
-# Please contribute
+**FormatIncrementId**
 
-# FormatIncrementId
 Format Magento Increment Id (Reduce Length/Remove Zero-padding/Add Prefix) [Read more here](https://www.classyllama.com/blog/m2-incrementid)
 
-# GraphQl 
-  # FetchProductById
+**GraphQl :FetchProductById **
+
 Fetch Product by productid using GraphQl
 
-# RenameCountry
+**RenameCountry**
+
 Rename Country
-
-
-
