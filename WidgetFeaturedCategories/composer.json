@@ -1,0 +1,25 @@
+{
+  "name": "Theshreyas/WidgetFeaturedCategories",
+  "description": "Add Category Widget",
+  "require": {
+    "php": ">=5.6"
+  },
+  "license": [
+    "MIT"
+  ],
+  "type": "magento2-module",
+  "version": "1.0.0",
+  "authors": [
+    {
+      "name": "NAnS"
+    }
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Theshreyas\\WidgetFeaturedCategories\\": ""
+    }
+  }
+}
