@@ -1,0 +1,21 @@
+{
+    "name": "theshreyas/module-setupdatawithcsv",
+    "description": "",
+    "type": "magento2-module",
+    "license": "OSL-3.0",
+    "authors": [
+        {
+            "name": "Theshreyas"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Theshreyas\\SetupDataWithCSV\\": ""
+        }
+    }
+}

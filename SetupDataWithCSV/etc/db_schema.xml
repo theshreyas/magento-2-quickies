@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+	<table comment="US Zipcodes" engine="innodb" name="test_uszipcodes" resource="default">
+		<column comment="Entity Id" identity="true" name="id" nullable="false" padding="6" unsigned="true" xsi:type="int"/>
+		<constraint referenceId="PRIMARY" xsi:type="primary">
+			<column name="id"/>
+		</constraint>
+		<column name="zipcode" nullable="true" xsi:type="text"/>
+		<column name="state" nullable="true" xsi:type="text"/>
+		<column name="country" nullable="true" xsi:type="text"/>
+		<column name="description" nullable="true" xsi:type="text"/>
+	</table>
+</schema>
