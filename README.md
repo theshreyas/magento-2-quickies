@@ -13,3 +13,11 @@ Fetch Product by productid using GraphQl
 **RenameCountry**
 
 Rename Country
+
+**SetupDataWithCSV**
+
+Setup Data Patch for Bulk upload through CSV
+
+**WidgetFeaturedCategories**
+
+Custom Widget for Featured Categories
