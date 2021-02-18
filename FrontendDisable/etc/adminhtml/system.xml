@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="admin">
+            <group id="frontend_disable" translate="label" type="text" sortOrder="9999" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Frontend Disable</label>
+                <field id="show_as_frontend" translate="label" type="select" sortOrder="2" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Show frontend as</label>
+                    <source_model>Theshreyas\FrontendDisable\Model\Config\Source\Custom</source_model>
+                </field>
+                <field id="custom_url" showInDefault="1" showInStore="0" showInWebsite="0" sortorder="2" translate="label comment" type="text">
+                    <label>Custom URL</label>
+                    <depends>
+                        <field id="show_as_frontend">4</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
