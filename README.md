@@ -2,9 +2,15 @@
 
 ## Work In Progress.. Please contribute
 
+**All tested on Magento 2.3.5-p2**
+
 **FormatIncrementId**
 
 Format Magento Increment Id (Reduce Length/Remove Zero-padding/Add Prefix) [Read more here](https://www.classyllama.com/blog/m2-incrementid)
+
+**FrontendDisable**
+
+Disable Magento frontend & Redirect to Admin/HomePage/Custom URL
 
 **FetchProductById GraphQl**
 
