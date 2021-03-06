@@ -1,0 +1,5 @@
+﻿interface ProductInterface @typeResolver(class: "Magento\\CatalogGraphQl\\Model\\ProductInterfaceTypeResolverComposite") @doc(description: "The ProductInterface contains attributes that are common to all types of products. Note that descriptions may not be available for custom and EAV attributes.") {
+	dynamicAttributes(
+		fields: [String]
+	): String @resolver(class: "\\Theshreyas\\DynamicAttributesGraphql\\Model\\Resolver\\Product\\DynamicAttributes") @doc(description: "Filterable attribute with Text")
+}
