@@ -12,6 +12,14 @@ Format Magento Increment Id (Reduce Length/Remove Zero-padding/Add Prefix) [Read
 
 Disable Magento frontend & Redirect to Admin/HomePage/Custom URL
 
+**Amazonpay GraphQl**
+
+Amazonpay Graphql support added(tested on 2.3.5-p2)
+
+**DynamicAttributesGraphql GraphQl**
+
+Graphql products query returns only ids for select or multiselect fields. This is quickfix which will allow to get Text Labels as well as Id Values.
+
 **FetchProductById GraphQl**
 
 Fetch Product by productid using GraphQl

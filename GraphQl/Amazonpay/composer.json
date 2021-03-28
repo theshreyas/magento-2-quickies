@@ -1,0 +1,22 @@
+{
+    "name": "theshreyas/module-amazonpay",
+    "description": "",
+    "type": "magento2-module",
+    "license": "OSL-3.0",
+    "authors": [
+        {
+            "name": "Shreyas",
+            "email": "shr3yas3@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Theshreyas\\Amazonpay\\": ""
+        },
+        "files": [
+            "registration.php"
+        ]
+    }
+}
