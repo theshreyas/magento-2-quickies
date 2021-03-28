@@ -1,0 +1,35 @@
+﻿type Query {
+    amazon_pay_config : AmazonPayConfig @resolver(class:"\\Theshreyas\\Amazonpay\\Model\\Resolver\\AmazonPayConfig") @doc(description: "The Amazon Pay details.")
+    getAmazonShippingAddress(input: AmazonAddressInput) : AmazonAddressOutput @resolver(class: "\\Theshreyas\\Amazonpay\\Model\\Resolver\\AmazonShippingAddress")
+    getAmazonBillingAddress(input: AmazonAddressInput) : AmazonAddressOutput @resolver(class: "\\Theshreyas\\Amazonpay\\Model\\Resolver\\AmazonBillingAddress")
+}
+
+type Mutation {
+    placeAmazonOrder(input: PlaceOrderInput): PlaceOrderOutput @resolver(class: "\\Theshreyas\\Amazonpay\\Model\\Resolver\\AmazonPay\\AmazonPlaceOrder")
+}
+input AmazonAddressInput {
+    cart_id: String!
+    amazonOrderReferenceId: String @Doc(description: "amazonOrderReferenceId"),
+    addressConsentToken: String @Doc(description: "addressConsentToken")
+}
+type AmazonAddressOutput {
+    city: String!
+    firstname: String!
+    lastname: String!
+    country_id: String!
+    street: [String!]!
+    postcode: String!
+    company: String!
+    telephone: String!
+    region: String!
+    region_id: String!
+    region_code: String!
+}
+type AmazonPayConfig {
+    merchant_id: String @doc(description: "merchant_id")
+    client_id: String @doc(description: "client_id")
+    sandbox: String @doc(description: "sandbox")
+    payment_region: String @doc(description: "payment_region")
+    button_color: String @doc(description: "button_color")
+    button_size: String @doc(description: "button_size")
+}
