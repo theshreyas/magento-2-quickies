@@ -1,0 +1,18 @@
+type Mutation {
+        ProductAlertNotifyInStock(input: SubmitInput): ProductAlertNotifyInStockOutput @resolver(class: "Theshreyas\\GuestStockAlert\\Model\\Resolver\\SaveStockAlert") @doc(description: "Guest add new Stock alert.")
+        ProductAlertUnsubscribe(email: String!): ProductAlertUnsubscribeOutput @resolver(class: "Theshreyas\\GuestStockAlert\\Model\\Resolver\\UnsubscribeStockAlert") @doc(description: "Unsubscribe Stock alert.")
+}
+
+input SubmitInput {
+        product_id: Int! @doc(description: "The product Id."),
+        email: String! @doc(description: "The customer Email.")
+}
+
+type ProductAlertNotifyInStockOutput {
+        message: String @doc(description: "Success or error Message")
+        id: Int @doc(description: "The Question Id")
+}
+type ProductAlertUnsubscribeOutput {
+        message: String @doc(description: "Success or error Message")
+        status: Boolean @doc(description: "Status Flag")
+}

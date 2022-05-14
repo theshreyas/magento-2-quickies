@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<preference for="Magento\ProductAlert\Model\Observer" type="Theshreyas\GuestStockAlert\Rewrite\Magento\ProductAlert\Model\Observer"/>
+	<preference for="Magento\Catalog\Block\Adminhtml\Product\Edit\Tab\Alerts\Stock" type="Theshreyas\GuestStockAlert\Rewrite\Magento\Catalog\Block\Adminhtml\Product\Edit\Tab\Alerts\Stock"/>
+	<preference for="Magento\ProductAlert\Model\Email" type="Theshreyas\GuestStockAlert\Rewrite\Magento\ProductAlert\Model\Email"/>
+</config>

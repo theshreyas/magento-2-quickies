@@ -5,7 +5,6 @@
  */
 declare (strict_types = 1);
 
-
 namespace Theshreyas\RequestedQtyGraphQlBug\Plugin\Graphql\Magento\QuoteGraphQl\Model\Resolver;
 
 use Magento\CatalogInventory\Api\StockRegistryInterface;
@@ -32,12 +31,13 @@ class Cart
         array $value = null,
         array $args = null
     ) {
-        $cart = $result['model'];
+        $cart    = $result['model'];
+        $deleted = false;
 
-        foreach ($cart->getErrors() as $k => $err) {//$cart->getHasError()
+        //$cart->getHasError()
+        foreach ($cart->getErrors() as $k => $err) {
+
             if ($err->getText() === 'The requested qty is not available') {
-
-                $cart->getErrors()[$k]->setText('Out of stock products removed from cart.');
 
                 foreach ($cart->getAllVisibleItems() as $item) {
 
@@ -45,8 +45,13 @@ class Cart
 
                     if ($stockItem->getManageStock() && $stockItem->getQty() - $stockItem->getMinQty() - $item->getQty() < 0) {
                         $item->delete();
+                        $deleted = true;
                     }
                 }
+                if ($deleted == true) {
+                    $cart->getErrors()[$k]->setText('Out of stock products removed from cart.');
+                }
+
             }
         }
         return [
