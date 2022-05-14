@@ -2,7 +2,7 @@
 
 ## Work In Progress.. Please contribute
 
-**All tested on Magento 2.3.5-p2**
+**All tested on Magento 2.3.5 & 2.4.3**
 
 **FormatIncrementId**
 
@@ -11,6 +11,10 @@ Format Magento Increment Id (Reduce Length/Remove Zero-padding/Add Prefix) [Read
 **FrontendDisable**
 
 Disable Magento frontend & Redirect to Admin/HomePage/Custom URL
+
+**GuestStockAlert**
+
+Implemented Default Product stock alerts for guests as well.
 
 **Amazonpay GraphQl**
 
@@ -23,6 +27,10 @@ Graphql products query returns only ids for select or multiselect fields. This i
 **FetchProductById GraphQl**
 
 Fetch Product by productid using GraphQl
+
+**RequestedQtyGraphQlBug GraphQl**
+
+Magento 2 [Core Bug](https://github.com/magento/magento2/issues/33281) Fix
 
 **RenameCountry**
 
