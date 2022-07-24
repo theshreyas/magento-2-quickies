@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<type name="Magento\Integration\Model\CustomerTokenService">
+		<plugin name="Theshreyas_WPPasswordConverter_Plugin_Graphql_Magento_Integration_Model_CustomerTokenService" type="Theshreyas\WPPasswordConverter\Plugin\Graphql\Magento\Integration\Model\CustomerTokenService" sortOrder="10" disabled="false"/>
+	</type>
+</config>

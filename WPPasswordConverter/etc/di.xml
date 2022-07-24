@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Theshreyas\WPPasswordConverter\PasswordHash">
+        <arguments>
+            <argument name="iteration_count_log2" xsi:type="number">8</argument>
+            <argument name="portable_hashes" xsi:type="boolean">true</argument>
+        </arguments>
+    </type>
+</config>
