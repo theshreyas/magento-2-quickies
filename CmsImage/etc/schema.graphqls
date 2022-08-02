@@ -1,0 +1,3 @@
+type CmsPage @doc(description: "CMS page defines all CMS page information") {
+    featured_image : String
+}
