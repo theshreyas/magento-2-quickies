@@ -103,6 +103,7 @@ class DataProvider extends \Magento\Cms\Model\Page\DataProvider
     ) {
         $this->request        = $request ?? ObjectManager::getInstance()->get(RequestInterface::class);
         $this->pageRepository = $pageRepository ?? ObjectManager::getInstance()->get(PageRepositoryInterface::class);
+        $this->pageFactory    = $pageFactory ?: ObjectManager::getInstance()->get(PageFactory::class);
         $this->_storeManager  = $storeManager;
 
         parent::__construct(
