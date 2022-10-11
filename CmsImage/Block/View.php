@@ -32,15 +32,15 @@ class View extends \Magento\Framework\View\Element\Template
 
     public function getOgImageUrl()
     {
-
         $page_id  = $this->getRequest()->getParam('page_id');
-        $pageData = $this->pageDataProvider->getDataByPageId((int) $page_id);
-
-        // return $this->getRequest()->getUriString();
-        $_ogimage = $pageData['featured_image'];
-        if ($_ogimage != "") {
-            $media_url = $this->_storeManager->getStore()->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA);
-            $_ogimage  = $media_url . "cms/featuredimage/" . $_ogimage;
+        $_ogimage = "";
+        if ($page_id) {
+            $pageData = $this->pageDataProvider->getDataByPageId((int) $page_id);
+            $_ogimage = $pageData['featured_image'];
+            if ($_ogimage != "") {
+                $media_url = $this->_storeManager->getStore()->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA);
+                $_ogimage  = $media_url . "cms/featuredimage/" . $_ogimage;
+            }
         }
 
         return $_ogimage;
