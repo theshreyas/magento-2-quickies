@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Theshreyas_Adminlogo::css/theshreyas.css"/>
+    </head>
+	<body>
+		<referenceBlock name="logo">
+            <arguments>
+            	<argument name="logo_image_src" xsi:type="string">Theshreyas_Adminlogo/images/logo-square.png</argument>
+            </arguments>
+        </referenceBlock>
+	</body>
+</page>

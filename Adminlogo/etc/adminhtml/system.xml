@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="new" translate="label" sortOrder="999" class="adminlogonew">
+            <label>Theshreyas Configuration</label>
+        </tab>
+        <section id="customsection" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+            <label>Custom Section</label>
+            <tab>new</tab>
+            <resource>Theshreyas_Adminlogo::config_theshreyas_adminlogo</resource>
+            <group id="options" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+                <label>Custom Options here</label>
+                <field id="customfield" type="text" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+                    <label>Field Name</label>
+                    <comment/>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

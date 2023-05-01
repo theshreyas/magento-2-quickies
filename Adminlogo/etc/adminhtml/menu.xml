@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category   Theshreyas
+ * @package    Theshreyas_Adminlogo
+ * @copyright  Copyright © Theshreyas All right reserved
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Theshreyas_Adminlogo::theshreyas"
+            title="Theshreyas"
+            module="Theshreyas_Adminlogo"
+            sortOrder="55"
+            resource="Theshreyas_Adminlogo::theshreyas"
+        />
+        <add id="Theshreyas_Adminlogo::theshreyas_adminlogo_settings"
+            title="Custom Settings"
+            module="Theshreyas_Adminlogo"
+            sortOrder="9999"
+            resource="Magento_Backend::content"
+            parent="Theshreyas_Adminlogo::theshreyas"
+            action="adminhtml/system_config/edit/section/customsection"/>
+    </menu>
+</config>

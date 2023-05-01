@@ -1,0 +1,46 @@
+.theshreyas-massproductupdate-form{
+    padding: 8px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.theshreyas-massproductupdate-form label{
+    display: inline-block;
+    margin-right: 8px;
+    max-width: 84px;
+    vertical-align: middle;
+}
+
+.theshreyas-massproductupdate-form input{
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+.theshreyas-massproductupdate-form select{
+    vertical-align: middle;
+    max-width: 170px;
+    margin-right: 8px;
+}
+
+.theshreyas-massproductupdate-form button{
+    vertical-align: middle;
+}
+
+.action-menu .action-submenu {
+    top: 100%;
+    margin-top: 2px;
+}
+
+.action-select-wrap ul.action-menu{
+    max-height: 300px;
+}
+
+@-moz-document url-prefix() {
+    .action-select-wrap ul.action-menu{
+        max-height: 45rem;
+    }
+}

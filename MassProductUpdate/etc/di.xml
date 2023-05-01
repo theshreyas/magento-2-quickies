@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Ui\Model\Manager">
+        <plugin name="Theshreyas_MassProductUpdate::addPriceUpdateOption" type="Theshreyas\MassProductUpdate\Plugin\Ui\Model\Manager"/>
+    </type>
+    <type name="Magento\Ui\Config\Reader">
+        <plugin name="Theshreyas_MassProductUpdate::addPriceUpdateOption2" type="Theshreyas\MassProductUpdate\Plugin\Ui\Model\Reader"/>
+    </type>
+</config>

@@ -1,0 +1,25 @@
+<ul
+    class="action-submenu"
+    data-bind="foreach: {data: action.actions, as: 'action'},
+    css: { _active: action.visible }">
+    <li data-bind="css: { '_visible': $data.visible}">
+        <div data-bind="" class="theshreyas-massproductupdate-form">
+                <label data-bind="i18n: action.fieldLabel"></label>
+                <!-- ko if: $data.typefield == 'textbox' -->
+                <input type="text" class="admin__control-text" data-bind="attr: { placeholder: action.placeholder}">
+                <!-- /ko -->
+                <!-- ko if: $data.typefield == 'select' -->
+                <select id="theshreyas-massproductupdate-select"
+                        class="admin__control-select"
+                        data-bind="
+                                options: action.child,
+                                optionsText: 'label',
+                                optionsValue: 'fieldvalue'">
+                </select>
+                <!-- /ko -->
+                <button type="button" data-bind="click: function(){$parent.applyMassaction(action)}" class="action-save">
+                    <span data-bind="i18n: 'Apply'">Apply</span>
+                </button>
+        </div>
+    </li>
+</ul>
