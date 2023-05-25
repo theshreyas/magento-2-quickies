@@ -17,6 +17,8 @@ This module is used for adding custom logos in the admin
 - Run Command: php bin/magento setup:static-content:deploy
 - Now Flush Cache: php bin/magento cache:flush
 ```
+![Screenshots](https://raw.githubusercontent.com/theshreyas/magento-2-quickies/main/media/ChangeLogo.gif)
+
 
 If you want to change the default hexagonal icon for custom modules check this :
 https://webkul.com/blog/magento-2-change-default-icon-in-menu-for-custom-module/
