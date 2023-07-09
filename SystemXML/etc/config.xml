@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+	<default>
+		<allconfig>
+			<simplefields>
+				<text_field/>
+				<textarea/>
+				<encrypted_field/>
+			</simplefields>
+			<dropdowns>
+				<yesno/>
+				<enable_disable/>
+				<locale/>
+				<stores/>
+				<websites/>
+				<currency/>
+				<countries/>
+				<payments/>
+				<order_statuses/>
+				<order_status_processing/>
+				<order_status_new/>
+				<category_displaymode/>
+				<category_staticblock/>
+				<category_sortby/>
+				<product_layout/>
+				<product_country/>
+				<producttype/>
+				<customergroup/>
+				<customer_store/>
+				<customer_website/>
+				<own/>
+			</dropdowns>
+		</allconfig>
+	</default>
+</config>

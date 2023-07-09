@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © MageWorx. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+ -->
+ 
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Theshreyas_SystemXML::css/style.css"/>
+        <css src="jquery/colorpicker/css/colorpicker.css"/>
+        <link src="jquery/colorpicker/js/colorpicker.js"/>
+    </head>
+</page>

@@ -1,0 +1,296 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+	<system>
+		<tab id="allconfig" translate="label" sortOrder="1">
+			<label>Theshreyas SystemXML</label>
+		</tab>
+		<section id="simple_config" sortOrder="1" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+			<label>Simple configurations</label>
+			<tab>allconfig</tab>
+			<resource>Theshreyas_SystemXML::config_theshreyas_systemxml</resource>
+			<group id="simplefields" sortOrder="1" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+				<label>Simple Fields</label>
+				<field id="text_field" type="text" sortOrder="1" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+					<label>Text Field</label>
+					<comment>Simple text field with its dummy comment</comment>
+				</field>
+				<field id="textarea" type="textarea" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+					<label>Textarea</label>
+					<comment><![CDATA[The following attributes are automatically added to the feed: <br />
+<ul style="margin-left: 2em;">
+<li><small>attribute_set_id</small></li>
+<li><small>categories</small></li>
+</ul>]]></comment>
+				</field>
+				<field id="encrypted_field" type="obscure" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+					<label>Encrypted Field</label>
+					<comment><![CDATA[Encrypted <b>Field here</b>]]></comment>
+					<backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+					<config_path>allconfig/simplefields/encrypted_field</config_path>
+				</field>
+				<field id="password" type="text" sortOrder="11" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+					<label>Password</label>
+					<comment>Password field</comment>
+				</field>
+				<field id="opening_time" translate="label" type="time" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="12">
+				    <label>Time</label>
+				</field>
+				<field id="from_date" translate="label" type="date" sortOrder="13" showInDefault="1" showInWebsite="1" showInStore="1">
+                   <label>Date Time Picker</label>
+                   <frontend_model>Theshreyas\SystemXML\Block\Adminhtml\Form\Field\DatePicker</frontend_model>
+               </field>
+   				<field id="image" type="image" sortOrder="14" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+					<label>Image</label>
+					<comment>Image field</comment>
+				</field>
+				<field id="label" type="label" sortOrder="15" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+					<label>Label</label>
+					<comment>Label field</comment>
+				</field>
+			</group>
+			<group id="dropdowns" sortOrder="2" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+				<label>Dropdowns (Default)</label>
+				<group id="simple" translate="label" type="text" sortOrder="1" showInDefault="1">
+                    <label>Simple</label>
+					<field id="yesno" type="select" sortOrder="1" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+						<label>Yes / No</label>
+						<comment><![CDATA[<b>Model</b>: Magento\Config\Model\Config\Source\Yesno]]></comment>
+						<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+					</field>
+					<field id="enable_disable" type="select" sortOrder="2" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+						<label>Enable Disable</label>
+						<comment><![CDATA[<b>Model</b>: Magento\Config\Model\Config\Source\Enabledisable]]></comment>
+						<source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+					</field>
+					<field id="customergroup" type="select" sortOrder="3" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+						<label>Customer Groups</label>
+						<comment><![CDATA[<b>Model</b>: Magento\Customer\Model\Customer\Attribute\Source\Group]]></comment>
+						<source_model>Magento\Customer\Model\Customer\Attribute\Source\Group</source_model>
+					</field>
+					<field id="customer_website" type="select" sortOrder="4" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+						<label>Customer Websites</label>
+						<comment><![CDATA[<b>Model</b>: Magento\Customer\Model\Customer\Attribute\Source\Website]]></comment>
+						<source_model>Magento\Customer\Model\Customer\Attribute\Source\Website</source_model>
+					</field>
+					<field id="own" type="select" sortOrder="5" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+						<label>Custom Values</label>
+						<comment><![CDATA[<b>Custom Model</b>: Theshreyas\SystemXML\Model\Config\Source\Own]]></comment>
+						<source_model>Theshreyas\SystemXML\Model\Config\Source\Own</source_model>
+					</field>
+					<field id="yesnocustom" type="select" sortOrder="6" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+						<label>Yes No Custom</label>
+						<comment><![CDATA[<b>Model</b>: Magento\Config\Model\Config\Source\Yesnocustom]]></comment>
+						<source_model>Magento\Config\Model\Config\Source\Yesnocustom</source_model>
+					</field>
+					<field id="frequency" type="select" sortOrder="7" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+						<label>Frequency</label>
+						<comment><![CDATA[<b>Model</b>: Magento\AdminNotification\Model\Config\Source\Frequency]]></comment>
+						<source_model>Magento\AdminNotification\Model\Config\Source\Frequency</source_model>
+					</field>
+					<field id="timeformat" type="select" sortOrder="8" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+						<label>TimeFormat</label>
+						<comment><![CDATA[<b>Model</b>: Magento\Catalog\Model\Config\Source\TimeFormat<br>Provides the values for the time format (12 h/24 h).]]></comment>
+						<source_model>Magento\Catalog\Model\Config\Source\TimeFormat</source_model>
+					</field>
+					<field id="frequency2" type="select" sortOrder="9" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+						<label>Frequency2</label>
+						<comment/>
+						<source_model>Magento\Cron\Model\Config\Source\Frequency</source_model>
+					</field>
+				</group>
+				<group id="locale" translate="label" type="text" sortOrder="2" showInDefault="1">
+                    <label>Locale</label>
+					<field id="locale" type="select" sortOrder="3" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+						<label>Locale</label>
+						<comment/>
+						<source_model>Magento\Config\Model\Config\Source\Locale</source_model>
+					</field>
+					<field id="stores" type="select" sortOrder="4" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+						<label>Stores</label>
+						<comment/>
+						<source_model>Magento\Config\Model\Config\Source\Store</source_model>
+					</field>
+					<field id="websites" type="select" sortOrder="5" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+						<label>Websites</label>
+						<comment/>
+						<source_model>Magento\Config\Model\Config\Source\Website</source_model>
+					</field>
+					<field id="currency" type="select" sortOrder="6" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+						<label>Currencies</label>
+						<comment/>
+						<source_model>Magento\Config\Model\Config\Source\Locale\Currency</source_model>
+					</field>
+					<field id="countries" type="select" sortOrder="7" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+						<label>Countries</label>
+						<comment/>
+						<source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+					</field>
+					<field id="language" type="select" sortOrder="8" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+						<label>Language</label>
+						<comment>Provides the values for a 2-letter code of a given language in the ISO 639-1 format (e.g. en).</comment>
+						<source_model>Magento\GoogleAdwords\Model\Config\Source\Language</source_model>
+					</field>
+				</group>
+				<group id="catalog" translate="label" type="text" sortOrder="3" showInDefault="1">
+                    <label>Catalog</label>
+    				<field id="category_displaymode" type="select" sortOrder="12" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+						<label>Category Display Mode</label>
+						<comment/>
+						<source_model>Magento\Catalog\Model\Category\Attribute\Source\Mode</source_model>
+					</field>
+					<field id="category_staticblock" type="select" sortOrder="13" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+						<label>Category Static Block</label>
+						<comment/>
+						<source_model>Magento\Catalog\Model\Category\Attribute\Source\Page</source_model>
+					</field>
+					<field id="category_sortby" type="select" sortOrder="14" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+						<label>Category Sort By</label>
+						<comment/>
+						<source_model>Magento\Catalog\Model\Category\Attribute\Source\Sortby</source_model>
+					</field>
+					<field id="product_layout" type="select" sortOrder="15" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+						<label>Product Layouts</label>
+						<comment/>
+						<source_model>Magento\Catalog\Model\Product\Attribute\Source\Layout</source_model>
+					</field>
+					<field id="product_country" type="select" sortOrder="16" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+						<label>Product Countries</label>
+						<comment/>
+						<source_model>Magento\Catalog\Model\Product\Attribute\Source\Countryofmanufacture</source_model>
+					</field>
+					<field id="producttype" type="select" sortOrder="17" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+						<label>Product Types</label>
+						<comment/>
+						<source_model>Magento\Catalog\Model\Product\Type</source_model>
+					</field>
+                </group>
+				<group id="order" translate="label" type="text" sortOrder="4" showInDefault="1">
+                    <label>Order Flow</label>
+					<field id="payments" type="select" sortOrder="8" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+						<label>Payments</label>
+						<comment/>
+						<source_model>Magento\Payment\Model\Config\Source\Allspecificcountries</source_model>
+					</field>
+					<field id="order_statuses" type="select" sortOrder="9" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+						<label>Order Statuses</label>
+						<comment/>
+						<source_model>Magento\Sales\Model\Config\Source\Order\Status\NewStatus</source_model>
+					</field>
+					<field id="order_status_processing" type="select" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+						<label>Order Statuses Processing</label>
+						<comment/>
+						<source_model>Magento\Sales\Model\Config\Source\Order\Status\Processing</source_model>
+					</field>
+					<field id="order_status_new" type="select" sortOrder="11" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+						<label>Order Status New</label>
+						<comment/>
+						<source_model>Magento\Sales\Model\Config\Source\Order\Status\Newprocessing</source_model>
+					</field>
+                </group>
+			</group>
+			<group id="depends" sortOrder="1" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+				<label>Use of depends</label>
+				<field id="text_field" type="text" sortOrder="1" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+					<label>Text Field</label>
+					<comment style="color:red;">Simple text field with its dummy comment</comment>
+				</field>
+				<field id="textarea" type="textarea" sortOrder="2" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+					<label>Textarea</label>
+					<comment/>
+				</field>
+			</group>
+		</section>
+		<section id="advanced_config" sortOrder="2" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+			<label>Advanced configurations</label>
+			<tab>allconfig</tab>
+			<resource>Theshreyas_SystemXML::config_theshreyas_systemxml</resource>
+			<group id="complex_fields" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>Complex Fields</label>
+				<field id="dynamic_comment" type="text" sortOrder="1" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+					<label>Dynamic Comment</label>
+					<comment><model>Theshreyas\SystemXML\Model\Config\Source\DynamicComment</model></comment>
+				</field>
+				<field id="color_picker" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+		            <label>Color Picker</label>
+		            <frontend_model>Theshreyas\SystemXML\Block\Adminhtml\Form\Field\ColorPicker</frontend_model>
+        		</field>
+               <field id="delivery_time" translate="label" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Delivery Time</label>
+                    <frontend_model>Theshreyas\SystemXML\Model\Config\FrontendModel\DeliveryTime</frontend_model>
+					<comment>Range Slider</comment>
+                </field>
+            </group>
+			<group id="buttons" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>Buttons</label>
+				<field id="url" type="text" sortOrder="1" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+					<label>Check if Url exists</label>
+					<comment>Enter Url, for example, www.google.com</comment>
+				</field>
+    	        <field id="button" translate="button_label" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label/>
+                    <button_label>Test Curl Connection</button_label>
+                    <frontend_model>Theshreyas\SystemXML\Block\Adminhtml\System\Config\CheckUrl</frontend_model>
+                </field>
+			</group>
+			<group id="quantity_ranges" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Dynamic Rows [Ex.Quantity Ranges]</label>
+                <field id="ranges" translate="label" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Ranges</label>
+                    <comment><![CDATA[Files: <b>Ranges.php & TaxColumn.php</b><br />
+					<a href="https://developer.adobe.com/commerce/php/tutorials/admin/create-dynamic-row-configuration">Tutorial here</a>]]></comment>
+                    <frontend_model>Theshreyas\SystemXML\Block\Adminhtml\Form\Field\Ranges</frontend_model>
+                    <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
+                </field>
+            </group>
+		</section>
+	</system>
+</config>
+
+<!-- simple fields textfield,textarea,radiotoggle,datepicker,datetimepicker, colorpicker,readonly,not editable
+dropdowns
+depends
+validations normal 5-6, custom
+complex -> ajax call,button, plugins,observer,graphql,info block, custom image, dynamic rows
+
+
+Custom Source Models
+https://github.com/magevision/blog/tree/master/CustomSourceModelConfiguration/app/code/MageVision/Blog5
+
+Set store configuration using data patches
+https://github.com/magevision/blog/tree/master/StoreConfigurationUsingDataPatch/app/code/MageVision/Blog79
+
+https://webkul.com/blog/how-to-add-color-picker-in-magento-2-admin-configuration/
+https://webkul.com/blog/magento-2-how-to-configure-and-customize-system-xml/
+
+button
+https://www.mageworx.com/magento-2-others-also-bought.html
+
+Custom Validation
+https://github.com/magevision/blog/tree/master/AddCustomValidationSystemConfigurationField/app/code/MageVision/Blog48
+
+Dynamic rows with image upload,select ,multiselect
+https://magento.stackexchange.com/a/354949
+https://magento.stackexchange.com/a/354065
+get value https://magento.stackexchange.com/a/272175
+
+exhaustive baseurl 
+https://devhooks.in/blog/add-dynamic-row-on-store-configuration-in-magento-2
+
+radio checkbox
+https://magento.stackexchange.com/questions/256587/magento-2-toggle-switch-yes-no-in-admin-config-of-custom-module-using-system-x
+default systemconfig=>
+catalog->catalog->product alerts run settings
+product image placeholders-> file upload
+catalog search test connection
+date& time custom options
+advanced system cron->subgroups
+
+button-> advanced system->scheduled
+https://stackoverflow.com/a/74967955
+
+all mysql operations
+print all differnt urls 
+print all different dates
+https://gist.github.com/molotovbliss/866d889e76d206c66a127d4227382a6b
+https://gist.github.com/molotovbliss/a989f7894dd72b0ddc5b2332f915407d
+ -->
