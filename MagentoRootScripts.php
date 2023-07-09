@@ -130,3 +130,25 @@ foreach ($creditmemos as $creditmemo) {
     $creditmemo->delete();
 }
 $order->delete();
+
+//Different Logging methods
+$writer = new \Zend_Log_Writer_Stream(BP . '/var/log/Theshreyas.log');
+$logger = new \Zend_Log();
+$logger->addWriter($writer);
+$logger->info('Your text message');
+$logger->info(print_r($result, true));
+// OR
+file_put_contents(BP . '/var/log/Theshreyas.log', print_r($key, true).PHP_EOL, FILE_APPEND);
+// OR
+$debugBackTrace = debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS);
+foreach ($debugBackTrace as $item) {
+    $logger->info(@$item['class'] . @$item['type'] . @$item['function']);
+}
+// OR
+foreach (debug_backtrace() as $_stack) {
+    $string =  (isset($_stack["file"]) ? $_stack["file"] : '') . ':' .
+        (isset($_stack["line"]) ? $_stack["line"] : '') . ' - ' .
+        (isset($_stack["function"]) ? $_stack["function"] : '').'<br/><hr/>';
+    $logger->info(print_r($string, true));
+ }
+//End of Different Logging methods
