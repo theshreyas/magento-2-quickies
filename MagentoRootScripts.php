@@ -10,9 +10,21 @@ $objectManager = $bootstrap->getObjectManager();
 $app_state = $objectManager->get('\Magento\Framework\App\State');
 $app_state->setAreaCode('frontend');
 
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$product = $objectManager->create('Magento\Catalog\Model\Product')->load($product_id);
+
 // Load Product by Sku
 $productRepository = $objectManager->get('\Magento\Catalog\Model\ProductRepository');
-$product           = $productRepository->get($product_sku);
+try{
+    $product           = $productRepository->get($product_sku);
+} catch(\Magento\Framework\Exception\NoSuchEntityException $e) {
+    $e->getMessage();
+}
+if(isset($product) && $product->getId()) //product found
+
+// Load Product ID by Sku
+$productId = $objectManager->get('Magento\Catalog\Model\Product')->getIdBySku($product_sku);
+//if($productId) //product found  else //not found
 
 // Assign single Product To multiple Category
 $new_category_id        = array('100', '101');
