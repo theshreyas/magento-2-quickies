@@ -2,7 +2,7 @@
 
 ## Work In Progress.. Please contribute
 
-**All tested on Magento 2.3.5 & 2.4.3**
+**All tested on Magento 2.4.5**
 
 **FormatIncrementId**
 
@@ -20,7 +20,7 @@ Implemented Default Product stock alerts for guests as well.
 
 Amazonpay Graphql support added(tested on 2.3.5-p2)
 
-**DynamicAttributesGraphql GraphQl**
+**DynamicAttributesGraphql GraphQl** (2.3)
 
 Graphql products query returns only ids for select or multiselect fields. This is quickfix which will allow to get Text Labels as well as Id Values.
 
