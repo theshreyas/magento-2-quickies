@@ -11,7 +11,11 @@ $app_state = $objectManager->get('\Magento\Framework\App\State');
 $app_state->setAreaCode('frontend');
 
 $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
-$product = $objectManager->create('Magento\Catalog\Model\Product')->load($product_id);
+// Lad product by ID
+try{
+    $product = $objectManager->get('\Magento\Catalog\Model\ProductRepository')->getById($id);
+    if($product->getId())
+} catch(\Magento\Framework\Exception\NoSuchEntityException $e) {
 
 // Load Product by Sku
 $productRepository = $objectManager->get('\Magento\Catalog\Model\ProductRepository');
@@ -164,3 +168,15 @@ foreach (debug_backtrace() as $_stack) {
     $logger->info(print_r($string, true));
  }
 //End of Different Logging methods
+
+//get store configuration value
+$conf          = $objectManager->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('cataloginventory/item_options/max_sale_qty');
+//by Store Id
+$this->scopeConfig->getValue(
+        'sections/group/field',
+        \Magento\Store\Model\ScopeInterface::SCOPE_STORE,
+        $storeId,
+    );
+
+//run any method/ cron programmatically
+$cron = $objectManager->get('\Vendor\Module\Cron\UpdateStatus')->execute();
