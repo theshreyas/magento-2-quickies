@@ -1,8 +1,8 @@
 <?php
 namespace Theshreyas\FrontendDisable\Model\Config\Source;
 
-
-class Custom implements \Magento\Framework\Option\ArrayInterface{
+class Custom implements \Magento\Framework\Option\ArrayInterface
+{
 
     public function toOptionArray()
     {
