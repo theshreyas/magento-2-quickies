@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Catalog\Model\ProductRepository">
+        <plugin name="Theshreyas_CatalogDeleteACL_Plugin_ProductDeleteBefore" type="Theshreyas\CatalogDeleteACL\Plugin\ProductDeleteBefore" sortOrder="10"/>
+    </type>
+    <type name="Magento\Catalog\Model\CategoryRepository">
+        <plugin name="Theshreyas_CatalogDeleteACL_Plugin_CategoryDeleteBefore" type="Theshreyas\CatalogDeleteACL\Plugin\CategoryDeleteBefore" sortOrder="10"/>
+    </type>
+</config>

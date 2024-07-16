@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Catalog\Ui\Component\Product\MassAction">
+        <plugin name="Theshreyas_CatalogDeleteACL_Plugin_ProductDeleteMassAction" type="Theshreyas\CatalogDeleteACL\Plugin\ProductDeleteMassAction" sortOrder="10"/>
+    </type>
+    <type name="Magento\Catalog\Block\Adminhtml\Category\Edit\DeleteButton">
+        <plugin name="Theshreyas_CatalogDeleteACL_Plugin_CategoryDeleteAction" type="Theshreyas\CatalogDeleteACL\Plugin\CategoryDeleteAction" sortOrder="10"/>
+    </type>
+    <type name="Magento\Framework\Acl\AclResource\Provider">
+        <plugin name="Theshreyas_CatalogDeleteACL_Plugin_AclTreeDisplay" type="Theshreyas\CatalogDeleteACL\Plugin\AclTreeDisplay" sortOrder="10"/>
+    </type>
+</config>

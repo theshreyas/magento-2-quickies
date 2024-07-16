@@ -9,7 +9,7 @@
             <tab>new</tab>
             <resource>Theshreyas_Adminlogo::config_theshreyas_adminlogo</resource>
             <group id="options" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
-                <label>Custom Options here</label>
+                <label>Dummy Settings(Logo example)</label>
                 <field id="customfield" type="text" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
                     <label>Field Name</label>
                     <comment/>

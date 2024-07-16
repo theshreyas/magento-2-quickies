@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+        <default>
+            <advanced_acl>
+                <acl_access>
+                    <product_delete>0</product_delete>
+                    <category_delete>0</category_delete>
+                </acl_access>
+            </advanced_acl>
+        </default>
+</config>

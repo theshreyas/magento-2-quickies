@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+	<system>
+		<tab id="Theshreyas" translate="label" sortOrder="1">
+			<label>Theshreyas</label>
+		</tab>
+		<section id="advanced_acl" sortOrder="101" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+			<label>Advanced ACL</label>
+			<tab>Theshreyas</tab>
+			<resource>Theshreyas_AdvancedImport::config_Theshreyas_CatalogDeleteACL</resource>
+			<group id="acl_access" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+			    <label>Advanced ACL Configuration</label>
+                <field id="product_delete" type="select" translate="label" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Product Delete Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="category_delete" type="select" translate="label" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Category Delete Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+			</group>
+		</section>
+	</system>
+</config>
