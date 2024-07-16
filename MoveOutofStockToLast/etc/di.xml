@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <virtualType name="additionalFieldsProviderForElasticsearch" type="Magento\AdvancedSearch\Model\Adapter\DataMapper\AdditionalFieldsProvider">
+        <arguments>
+            <argument name="fieldsProviders" xsi:type="array">
+                <item name="custom_field" xsi:type="object">Theshreyas\MoveOutofStockToLast\Model\Adapter\BatchDataMapper\CustomDataProvider</item>
+            </argument>
+        </arguments>
+    </virtualType>
+</config>
