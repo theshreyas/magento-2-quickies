@@ -1,5 +1,6 @@
 <?php
 namespace Theshreyas\MassProductUpdate\Model\Command;
+
 use Magento\Framework\App\ResourceConnection;
 
 class Modifyspecial extends Modifyprice
@@ -13,7 +14,7 @@ class Modifyspecial extends Modifyprice
     ) {
         parent::__construct($helper, $objectManager, $eavConfig, $storeManager, $resource);
         $this->_type = 'modifyspecial';
-        $this->_info = array_merge( $this->_info, [
+        $this->_info = array_merge($this->_info, [
             'confirm_title'   => 'Update Special Price',
             'confirm_message' => 'Are you sure you want to update special price?',
             'type'            =>  $this->_type,

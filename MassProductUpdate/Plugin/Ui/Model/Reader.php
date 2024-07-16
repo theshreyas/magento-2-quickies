@@ -24,7 +24,7 @@ class Reader extends AbstractReader
         ) {
             //$item = 'modifyprice';
             $children = &$result['children']['listing_top']['children']['listing_massaction']['children'];
-            foreach($availableOptions as $item) {
+            foreach ($availableOptions as $item) {
                 if (array_key_exists($item, $children)) {
                     continue;
                 }

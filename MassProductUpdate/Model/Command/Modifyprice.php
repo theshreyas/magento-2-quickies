@@ -7,40 +7,19 @@ use Magento\Framework\Exception\LocalizedException;
 class Modifyprice extends \Theshreyas\MassProductUpdate\Model\Command
 {
     /**
-     * @var \Theshreyas\MassProductUpdate\Helper\Data
+     * @var ResourceConnection
      */
-    protected $_helper;
-
-    /**
-     * Eav config
-     *
-     * @var \Magento\Eav\Model\Config
-     */
-    protected $_eavConfig;
-
-    /**
-     * Store manager
-     *
-     * @var StoreManagerInterface
-     */
-    protected $storeManager;
+    protected $connection;
 
     public function __construct(
-        \Theshreyas\MassProductUpdate\Helper\Data $helper,
-        \Magento\Framework\ObjectManagerInterface $objectManager,
-        \Magento\Eav\Model\Config $eavConfig,
-        \Magento\Store\Model\StoreManagerInterface $storeManager,
-        ResourceConnection $resource
+        protected \Theshreyas\MassProductUpdate\Helper\Data $helper,
+        protected \Magento\Framework\ObjectManagerInterface $objectManager,
+        protected \Magento\Eav\Model\Config $eavConfig,
+        protected \Magento\Store\Model\StoreManagerInterface $storeManager,
+        protected ResourceConnection $resource
     ) {
-        $this->_helper = $helper;
-        $this->objectManager = $objectManager;
-        $this->resource = $resource;
-        $this->_eavConfig = $eavConfig;
-        $this->storeManager = $storeManager;
         $this->connection = $resource->getConnection();
-
-        parent::__construct();
-
+        // parent::__construct();
         $this->_type = 'modifyprice';
         $this->_info = [
             'confirm_title'   => 'Update Price',
@@ -59,7 +38,7 @@ class Modifyprice extends \Theshreyas\MassProductUpdate\Model\Command
      * @param int $storeId store id
      * @param string $val field value
      * @return string success message if any
-     */    
+     */
     public function execute($ids, $storeId, $val)
     {
         if (!preg_match('/^[+-][0-9]+(\.[0-9]+)?%?$/', $val)) {
@@ -104,7 +83,7 @@ class Modifyprice extends \Theshreyas\MassProductUpdate\Model\Command
      */
     protected function _updateAttribute($attrCode, $productIds, $storeId, $diff)
     {
-        $attribute = $this->_eavConfig->getAttribute(\Magento\Catalog\Model\Product::ENTITY, $attrCode);
+        $attribute = $this->eavConfig->getAttribute(\Magento\Catalog\Model\Product::ENTITY, $attrCode);
         $db     = $this->connection;
         $table  = $attribute->getBackend()->getTable();
         $entityIdName = 'entity_id';
@@ -142,7 +121,7 @@ class Modifyprice extends \Theshreyas\MassProductUpdate\Model\Command
         }
         
         // in case of store-view or website scope we need to insert default values
-        // first, to be able to update them. 
+        // first, to be able to update them.
         // @todo: Special price can be null in the base store
         if ($storeIds) {
             $cond = [
