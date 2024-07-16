@@ -16,10 +16,12 @@ class View extends \Magento\Framework\View\Element\Template
      */
     protected $_storeManager;
 
-    public function __construct(\Magento\Catalog\Block\Product\Context $context,
+    public function __construct(
+        \Magento\Catalog\Block\Product\Context $context,
         PageDataProvider $pageDataProvider,
         \Magento\Store\Model\StoreManagerInterface $storeManager,
-        array $data = []) {
+        array $data = []
+    ) {
         $this->pageDataProvider = $pageDataProvider;
         $this->_storeManager    = $storeManager;
         parent::__construct($context, $data);

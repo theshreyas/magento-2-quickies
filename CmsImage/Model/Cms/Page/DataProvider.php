@@ -16,9 +16,6 @@ use Magento\Framework\AuthorizationInterface;
 use Magento\Framework\Exception\LocalizedException;
 use Psr\Log\LoggerInterface;
 
-/**
- * Class DataProvider
- */
 class DataProvider extends \Magento\Cms\Model\Page\DataProvider
 {
     /**
@@ -72,6 +69,7 @@ class DataProvider extends \Magento\Cms\Model\Page\DataProvider
      * @param string $requestFieldName
      * @param Magento\Cms\Model\ResourceModel\Page\CollectionFactory $pageCollectionFactory
      * @param DataPersistorInterface $dataPersistor
+     * @param \Magento\Store\Model\StoreManagerInterface $storeManager
      * @param array $meta
      * @param array $data
      * @param Magento\Cms\Api\Data\PageInterface|null $pool
@@ -81,8 +79,6 @@ class DataProvider extends \Magento\Cms\Model\Page\DataProvider
      * @param PageRepositoryInterface|null $pageRepository
      * @param PageFactory|null $pageFactory
      * @param LoggerInterface|null $logger
-     * @param \Magento\Store\Model\StoreManagerInterface $storeManager
-     * @SuppressWarnings(PHPMD.ExcessiveParameterList)
      */
     public function __construct(
         $name,

@@ -18,7 +18,7 @@ use Magento\Framework\GraphQl\Schema\Type\ResolveInfo;
 class FeaturedImage implements ResolverInterface
 {
 
-    const CMS_TABLE = 'cms_page';
+    public const CMS_TABLE = 'cms_page';
 
     /**
      * @var ResourceConnection
@@ -40,7 +40,6 @@ class FeaturedImage implements ResolverInterface
     ) {
         $this->resourceConnection = $resourceConnection;
         $this->_storeManager      = $storeManager;
-
     }
     /**
      * @inheritdoc
