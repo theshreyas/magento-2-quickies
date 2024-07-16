@@ -31,7 +31,7 @@ class DynamicAttributes implements ResolverInterface
       throw new GraphQlInputException(__('Input parameter "fields" is missing'));
     }
     $product = $this->_productRepository->getById($value['entity_id']);
-    $data = array();
+    $data = [];
     foreach ($args['fields'] as $fi) {
       $att = $product->getResource()->getAttribute($fi);
       if (isset($att) && $att) {
