@@ -4,7 +4,7 @@ namespace Theshreyas\SystemXML\Block\Adminhtml\Form\Field;
 
 use Magento\Framework\Data\Form\Element\AbstractElement;
 
-class TimeSlider extends \Magento\Framework\View\Element\Template implements
+class DeliveryTime extends \Magento\Framework\View\Element\Template implements
     \Magento\Framework\Data\Form\Element\Renderer\RendererInterface,
     \Magento\Widget\Block\BlockInterface
 {

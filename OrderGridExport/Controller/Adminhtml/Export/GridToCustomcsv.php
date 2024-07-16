@@ -7,16 +7,16 @@ namespace Theshreyas\OrderGridExport\Controller\Adminhtml\Export;
 
 use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
-use Theshreyas\OrderGridExport\Model\Export\ConvertToXls;
+use Theshreyas\OrderGridExport\Model\Export\ConvertToCustomCsv;
 use Magento\Framework\App\Response\Http\FileFactory;
 
 /**
  * Class Render
  */
-class GridToXls extends Action
+class GridToCustomcsv extends Action
 {
     /**
-     * @var ConvertToXls
+     * @var ConvertToCustomCsv
      */
     protected $converter;
 
@@ -27,12 +27,12 @@ class GridToXls extends Action
 
     /**
      * @param Context $context
-     * @param ConvertToXml $converter
+     * @param ConvertToCustomCsv $converter
      * @param FileFactory $fileFactory
      */
     public function __construct(
         Context $context,
-        ConvertToXls $converter,
+        ConvertToCustomCsv $converter,
         FileFactory $fileFactory
     ) {
         parent::__construct($context);
@@ -48,6 +48,6 @@ class GridToXls extends Action
      */
     public function execute()
     {
-        return $this->fileFactory->create('export.xls', $this->converter->getXlsFile(), 'var');
+        return $this->fileFactory->create('CustomOrderCsv.csv', $this->converter->getCustomCsvFile(), 'var');
     }
 }

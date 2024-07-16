@@ -6,27 +6,31 @@ use Magento\Framework\UrlInterface;
 
 class DynamicComment implements \Magento\Config\Model\Config\CommentInterface
 {
-    protected $urlInterface;
-    
-    protected $authSession;
-    
+    /**
+     * Construct function
+     *
+     * @param \Magento\Backend\Model\Auth\Session $authSession
+     * @param UrlInterface $urlInterface
+     */
     public function __construct(
-        \Magento\Backend\Model\Auth\Session $authSession,
-        UrlInterface $urlInterface
+        protected \Magento\Backend\Model\Auth\Session $authSession,
+        protected UrlInterface $urlInterface
     ) {
-        $this->urlInterface = $urlInterface;
-        $this->authSession = $authSession;
     }
 
+    /**
+     * Get Comment Text
+     *
+     * @param mixed $elementValue
+     * @return string
+     */
     public function getCommentText($elementValue)
     {
         $currentUser = $this->authSession->getUser();
-        $username = $currentUser->getUsername();
-        $email = $currentUser->getEmail();
-        file_put_contents(BP . '/var/log/Shreyas3.log', print_r(gettype($elementValue), true).PHP_EOL, FILE_APPEND);
-
+        $username    = $currentUser->getUsername();
+        $email       = $currentUser->getEmail();
         // $this->authSession->getUser()->getEmail();
         // $url = $this->urlInterface->getUrl('adminhtml/system_config/edit/section/payment');
-        return 'Current Admin User : '.$username. ' with Email : '.$email.'<br>Field Value : '.$elementValue;
+        return 'Current Admin User : ' . $username . ' with Email : ' . $email . '<br>Field Value : ' . $elementValue;
     }
 }

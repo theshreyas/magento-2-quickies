@@ -6,9 +6,6 @@ use Magento\Framework\DataObject;
 use Magento\Framework\Exception\LocalizedException;
 use Theshreyas\SystemXML\Block\Adminhtml\Form\Field\TaxColumn;
 
-/**
- * Class Ranges
- */
 class Ranges extends AbstractFieldArray
 {
     /**

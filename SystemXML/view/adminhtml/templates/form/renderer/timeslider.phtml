@@ -5,42 +5,42 @@ $element = $block->getElement();
 $form = $element->getForm();
 /** @var \Magento\Config\Block\System\Config\Form $parentForm */
 $parentForm = $form->getParent();
-$timeFrom = $parentForm->getConfigValue('advanced_config/complex_fields/delivery_time_from');;
-$timeTo = $parentForm->getConfigValue('advanced_config/complex_fields/delivery_time_to');;
+$timeFrom = $parentForm->getConfigValue('advanced_config/complex_fields/delivery_time_from');
+$timeTo = $parentForm->getConfigValue('advanced_config/complex_fields/delivery_time_to');
 ?>
 <div id="time-range" class="field field-time_range">
     <label class="label" style="white-space: normal;">
-        <?php echo __('Time Range: ');?>
+        <?= __('Time Range: ');?>
         <span class="slider-time">
-            <?php echo $block->minutesToTime($timeFrom);?>
+            <?= $block->minutesToTime($timeFrom);?>
         </span>
-        <?php echo ' - '; ?>
+        <?= ' - '; ?>
         <span class="slider-time2">
-            <?php echo $block->minutesToTime($timeTo);?>
+            <?= $block->minutesToTime($timeTo);?>
         </span>
     </label>
     <div class="sliders_step1 control">
         <div id="slider-range"></div>
         <input type="hidden"
-               name="<?php echo $block->getNameFrom();?>"
-               value="<?php echo $timeFrom?>"
+               name="<?= $block->getNameFrom();?>"
+               value="<?= $timeFrom?>"
             />
         <input type="hidden"
-               name="<?php echo $block->getNameTo();?>"
-               value="<?php echo $timeTo?>"
+               name="<?= $block->getNameTo();?>"
+               value="<?= $timeTo?>"
             />
     </div>
 </div>
-<script type="text/javascript">
+<script>
     require(['jquery', 'jquery/ui'], function($){
-        console.log("<?php echo $timeFrom?>");
-            console.log("<?php echo $timeTo?>");
+        console.log("<?= $timeFrom?>");
+            console.log("<?= $timeTo?>");
         $("#slider-range").slider({
             range: true,
             min: 0,
             max: 1440,
             step: 15,
-            values: [<?php echo $timeFrom?>, <?php echo $timeTo?>],
+            values: [<?= $timeFrom?>, <?= $timeTo?>],
             slide: function (e, ui) {
                 var hours1 = Math.floor(ui.values[0] / 60);
                 var minutes1 = ui.values[0] - (hours1 * 60);
@@ -91,8 +91,8 @@ $timeTo = $parentForm->getConfigValue('advanced_config/complex_fields/delivery_t
                 }
 
                 $('.slider-time2').html(hours2 + ':' + minutes2);
-                $('[name="<?php echo $block->getNameFrom();?>"]').val(ui.values[0]);
-                $('[name="<?php echo $block->getNameTo();?>"]').val(ui.values[1]);
+                $('[name="<?= $block->getNameFrom();?>"]').val(ui.values[0]);
+                $('[name="<?= $block->getNameTo();?>"]').val(ui.values[1]);
             }
         });
     });

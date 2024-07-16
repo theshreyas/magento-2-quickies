@@ -6,7 +6,7 @@
 
 namespace Theshreyas\SystemXML\Model\Config\FrontendModel;
 
-class DeliveryTime extends \Magento\Config\Block\System\Config\Form\Field
+class TimeSlider extends \Magento\Config\Block\System\Config\Form\Field
 {
     /**
      * Retrieve element HTML markup
@@ -18,7 +18,7 @@ class DeliveryTime extends \Magento\Config\Block\System\Config\Form\Field
     protected function _getElementHtml(\Magento\Framework\Data\Form\Element\AbstractElement $element)
     {
         $renderer = $this->getLayout()->createBlock(
-            \Theshreyas\SystemXML\Block\Adminhtml\Form\Field\TimeSlider::class
+            Theshreyas\SystemXML\Block\Adminhtml\Form\Field\TimeSlider::class
         );
         $renderer->setElement($element);
 

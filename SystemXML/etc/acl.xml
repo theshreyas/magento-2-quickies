@@ -6,7 +6,8 @@
 				<resource id="Magento_Backend::stores">
 					<resource id="Magento_Backend::stores_settings">
 						<resource id="Magento_Config::config">
-							<resource id="Theshreyas_SystemXML::config_theshreyas_systemxml" title="allconfig"/>
+							<resource id="Theshreyas_SystemXML::config_theshreyas_simpleconfig" title="Theshreyas SimpleConfig"/>
+							<resource id="Theshreyas_SystemXML::config_theshreyas_advancedconfig" title="Theshreyas AdvancedConfig"/>
 						</resource>
 					</resource>
 				</resource>

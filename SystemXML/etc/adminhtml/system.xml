@@ -7,7 +7,7 @@
 		<section id="simple_config" sortOrder="1" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
 			<label>Simple configurations</label>
 			<tab>allconfig</tab>
-			<resource>Theshreyas_SystemXML::config_theshreyas_systemxml</resource>
+			<resource>Theshreyas_SystemXML::config_theshreyas_simpleconfig</resource>
 			<group id="simplefields" sortOrder="1" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
 				<label>Simple Fields</label>
 				<field id="text_field" type="text" sortOrder="1" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
@@ -17,10 +17,11 @@
 				<field id="textarea" type="textarea" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
 					<label>Textarea</label>
 					<comment><![CDATA[The following attributes are automatically added to the feed: <br />
-<ul style="margin-left: 2em;">
-<li><small>attribute_set_id</small></li>
-<li><small>categories</small></li>
-</ul>]]></comment>
+						<ul style="margin-left: 2em;">
+						<li><small>attribute_set_id</small></li>
+						<li><small>categories</small></li>
+						</ul>]]>
+					</comment>
 				</field>
 				<field id="encrypted_field" type="obscure" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
 					<label>Encrypted Field</label>
@@ -203,8 +204,8 @@
 		<section id="advanced_config" sortOrder="2" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
 			<label>Advanced configurations</label>
 			<tab>allconfig</tab>
-			<resource>Theshreyas_SystemXML::config_theshreyas_systemxml</resource>
-			<group id="complex_fields" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+			<resource>Theshreyas_SystemXML::config_theshreyas_advancedconfig</resource>
+			<group id="complex_fields" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
 				<label>Complex Fields</label>
 				<field id="dynamic_comment" type="text" sortOrder="1" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
 					<label>Dynamic Comment</label>
@@ -220,7 +221,7 @@
 					<comment>Range Slider</comment>
                 </field>
             </group>
-			<group id="buttons" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+			<group id="buttons" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
 				<label>Buttons</label>
 				<field id="url" type="text" sortOrder="1" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
 					<label>Check if Url exists</label>
@@ -232,7 +233,7 @@
                     <frontend_model>Theshreyas\SystemXML\Block\Adminhtml\System\Config\CheckUrl</frontend_model>
                 </field>
 			</group>
-			<group id="quantity_ranges" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+			<group id="quantity_ranges" translate="label" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>Dynamic Rows [Ex.Quantity Ranges]</label>
                 <field id="ranges" translate="label" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Ranges</label>

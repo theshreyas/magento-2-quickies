@@ -3,7 +3,8 @@ namespace Theshreyas\SystemXML\Block\Adminhtml\Form\Field;
 
 class ColorPicker extends \Magento\Config\Block\System\Config\Form\Field
 {
-    protected function _getElementHtml(\Magento\Framework\Data\Form\Element\AbstractElement $element) {
+    protected function _getElementHtml(\Magento\Framework\Data\Form\Element\AbstractElement $element)
+    {
         $html = $element->getElementHtml();
         $value = $element->getData('value');
 

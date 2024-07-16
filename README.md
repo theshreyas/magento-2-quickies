@@ -1,45 +1,41 @@
 # magento-2-quickies
 
-## Work In Progress.. Please contribute
+**All tested on Magento 2.4.6**
 
-**All tested on Magento 2.4.5**
+**Adminlogo** - Change various logos in the admin panel
 
-**FormatIncrementId**
+**CatalogDeleteACL** - Provide separate ACL for category & product delete access (for api as well)
 
-Format Magento Increment Id (Reduce Length/Remove Zero-padding/Add Prefix) [Read more here](https://www.classyllama.com/blog/m2-incrementid)
+**CmsImage** - Add Image attribute in CMS Page 
 
-**FrontendDisable**
+**FormatIncrementId** - Format Magento Increment Id (Reduce Length/Remove Zero-padding/Add Prefix) [Read more here](https://www.classyllama.com/blog/m2-incrementid)
 
-Disable Magento frontend & Redirect to Admin/HomePage/Custom URL
+**FrontendDisable** - Disable Magento frontend & Redirect to Admin/HomePage/Custom URL
 
-**GuestStockAlert**
-
-Implemented Default Product stock alerts for guests as well.
-
-**Amazonpay GraphQl**
-
-Amazonpay Graphql support added(tested on 2.3.5-p2)
+**Amazonpay GraphQl** - Amazonpay Graphql support added(tested on 2.3.4)
+(Deprecated. AmazonPay has added graphql support now)
 
 **DynamicAttributesGraphql GraphQl** (2.3)
-
 Graphql products query returns only ids for select or multiselect fields. This is quickfix which will allow to get Text Labels as well as Id Values.
 
-**FetchProductById GraphQl**
+**FetchProductById GraphQl** - Fetch Product by productid using GraphQl
 
-Fetch Product by productid using GraphQl
+**RequestedQtyGraphQlBug GraphQl** - Magento 2 [Core Bug](https://github.com/magento/magento2/issues/33281) Fix
 
-**RequestedQtyGraphQlBug GraphQl**
+**GuestStockAlert** - Implemented Default Product stock alerts for guests as well.
 
-Magento 2 [Core Bug](https://github.com/magento/magento2/issues/33281) Fix
+**MassProductUpdate** - This module provides mass update actions in admin product grid, it can update product prices for selected products by lumpsum amount or via percentage changes
 
-**RenameCountry**
+**MoveOutofStockToLast** - This module Display out of stock products to the end of category page.
 
-Rename Country
+**OrderGridExport** - This module provides additional options in admin order grid export, like 'export xls' and 'export custom csv'.
 
-**SetupDataWithCSV**
+**RenameCountry** - Rename Country
 
-Setup Data Patch for Bulk upload through CSV
+**SetupDataWithCSV** - Setup Data Patch for Bulk upload through CSV
 
-**WidgetFeaturedCategories**
+**SystemXML** - All System Configurations Reference with examples
 
-Custom Widget for Featured Categories
+**WidgetFeaturedCategories** - Custom Widget for Featured Categories
+
+**WPPasswordConverter** - Customer Passwords migration from Wordpress to Magento. After saving wordpress customer passwords into magento, on every login it will check whether it matches wp old password, if so it will resave it in magento format and customer will be logged in.

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Theshreyas\ProductGridExport\Model\Export\ConvertToCsv">
+        <arguments>
+            <argument name="metadataProvider" xsi:type="object">Theshreyas\ProductGridExport\Model\Export\MetadataProvider</argument>
+        </arguments>
+    </type>
+    <type name="Theshreyas\ProductGridExport\Model\Export\ConvertToXml">
+        <arguments>
+            <argument name="metadataProvider" xsi:type="object">Theshreyas\ProductGridExport\Model\Export\MetadataProvider</argument>
+        </arguments>
+    </type>
+    <type name="Theshreyas\ProductGridExport\Model\Export\ConvertToXls">
+        <arguments>
+            <argument name="metadataProvider" xsi:type="object">Theshreyas\ProductGridExport\Model\Export\MetadataProvider</argument>
+        </arguments>
+    </type>
+</config>

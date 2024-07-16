@@ -1,6 +1,6 @@
 # Mage2 Module Theshreyas SystemXML
 
-    ``theshreyas/module-systemxml``
+    ``theshreyas/systemxml``
 
  - [Main Functionalities](#markdown-header-main-functionalities)
  - [Installation](#markdown-header-installation)

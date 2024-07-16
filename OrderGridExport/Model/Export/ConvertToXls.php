@@ -17,9 +17,6 @@ use Magento\Framework\Filesystem;
 use Magento\Framework\Filesystem\Directory\WriteInterface;
 use Magento\Ui\Component\MassAction\Filter;
 
-/**
- * Class ConvertToXls
- */
 class ConvertToXls
 {
     /**
@@ -28,24 +25,9 @@ class ConvertToXls
     protected $directory;
 
     /**
-     * @var MetadataProvider
-     */
-    protected $metadataProvider;
-
-    /**
-     * @var ExcelFactory
-     */
-    protected $excelFactory;
-
-    /**
      * @var array
      */
     protected $options;
-
-    /**
-     * @var SearchResultIteratorFactory
-     */
-    protected $iteratorFactory;
 
     /**
      * @var array
@@ -60,17 +42,16 @@ class ConvertToXls
      * @param SearchResultIteratorFactory $iteratorFactory
      */
     public function __construct(
-        Filesystem $filesystem,
-        Filter $filter,
-        MetadataProvider $metadataProvider,
-        ExcelFactory $excelFactory,
-        SearchResultIteratorFactory $iteratorFactory
+        protected Filesystem $filesystem,
+        protected Filter $filter,
+        protected MetadataProvider $metadataProvider,
+        protected ExcelFactory $excelFactory,
+        protected SearchResultIteratorFactory $iteratorFactory
     ) {
         $this->filter = $filter;
         $this->directory = $filesystem->getDirectoryWrite(DirectoryList::VAR_DIR);
         $this->metadataProvider = $metadataProvider;
         $this->excelFactory = $excelFactory;
-        $this->iteratorFactory = $iteratorFactory;
     }
 
     /**
@@ -121,7 +102,7 @@ class ConvertToXls
     {
         $component = $this->filter->getComponent();
 
-        $name = md5(microtime());
+        $name = hash('md5', microtime());
         $file = 'export/'. $component->getName() . $name . '.xls';
 
         $this->filter->prepareComponent($component);

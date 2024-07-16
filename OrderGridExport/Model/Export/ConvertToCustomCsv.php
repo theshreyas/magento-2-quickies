@@ -18,9 +18,6 @@ use Magento\Framework\Filesystem;
 use Magento\Framework\Filesystem\Directory\WriteInterface;
 use Magento\Ui\Component\MassAction\Filter;
 
-/**
- * Class ConvertToCustomCsv
- */
 class ConvertToCustomCsv
 {
     /**
@@ -29,33 +26,17 @@ class ConvertToCustomCsv
     protected $directory;
 
     /**
-     * @var MetadataProvider
-     */
-    protected $metadataProvider;
-
-    /**
-     * @var ExcelFactory
-     */
-    protected $excelFactory;
-
-    /**
      * @var array
      */
     protected $options;
-
-    /**
-     * @var SearchResultIteratorFactory
-     */
-    protected $iteratorFactory;
 
     /**
      * @var array
      */
     protected $fields;
 
-    protected $resourceConnection;
-
     /**
+     * @param ResourceConnection $resourceConnection
      * @param Filesystem $filesystem
      * @param Filter $filter
      * @param MetadataProvider $metadataProvider
@@ -63,15 +44,14 @@ class ConvertToCustomCsv
      * @param SearchResultIteratorFactory $iteratorFactory
      */
     public function __construct(
-        ResourceConnection $resourceConnection,
+        protected ResourceConnection $resourceConnection,
         Filesystem $filesystem,
-        Filter $filter,
-        MetadataProvider $metadataProvider,
-        ExcelFactory $excelFactory,
-        SearchResultIteratorFactory $iteratorFactory
+        protected Filter $filter,
+        protected MetadataProvider $metadataProvider,
+        protected ExcelFactory $excelFactory,
+        protected SearchResultIteratorFactory $iteratorFactory
     ) {
         $this->resourceConnection = $resourceConnection;
-        $this->filter = $filter;
         $this->directory = $filesystem->getDirectoryWrite(DirectoryList::VAR_DIR);
         $this->metadataProvider = $metadataProvider;
         $this->excelFactory = $excelFactory;
@@ -125,7 +105,7 @@ class ConvertToCustomCsv
     public function getCustomCsvFile()
     {
         $component = $this->filter->getComponent();
-        $name = md5(microtime());
+        $name = hash('md5', microtime());
         $file = 'export/' . $component->getName() . $name . '.csv';
 
         $this->filter->prepareComponent($component);
@@ -143,7 +123,7 @@ class ConvertToCustomCsv
             $orderIds[] = $item->getCustomAttribute('increment_id')->getValue();
         }
 
-        $orderIds = implode("','",$orderIds);
+        $orderIds = implode("','", $orderIds);
 
         $this->directory->create('export');
 
@@ -175,8 +155,7 @@ class ConvertToCustomCsv
         $connection = $this->resourceConnection->getConnection();
         $result = $connection->fetchAll($query);
         
-        foreach ($result as $item)
-        {
+        foreach ($result as $item) {
             $ring_size = $width = $length = $chain = $cut = $carat = $clarity = $color = $metal = $certificate_number = '';
 
             // $options = json_decode($item['product_options'],TRUE);
