@@ -2,10 +2,10 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <type name="Magento\Customer\Api\CustomerRepositoryInterface">
         <plugin name="customer_data_sync_set_automated_timestamp"
-                type="Shrm\CustomerDataSync\Plugin\CustomerRepositoryPlugin"/>
+                type="Theshreyas\CustomerDataSync\Plugin\CustomerRepositoryPlugin"/>
     </type>
     <type name="Magento\Customer\Api\AccountManagementInterface">
         <plugin name="create_customer_address_data_sync_set_automated_timestamp"
-                type="Shrm\CustomerDataSync\Plugin\CreateAccountPlugin"/>
+                type="Theshreyas\CustomerDataSync\Plugin\CreateAccountPlugin"/>
     </type>
 </config>

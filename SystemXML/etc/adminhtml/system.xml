@@ -25,7 +25,7 @@
 				</field>
 				<field id="encrypted_field" type="obscure" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
 					<label>Encrypted Field</label>
-					<comment><![CDATA[Encrypted <b>Field here</b>]]></comment>
+					<comment><![CDATA[<b>Encrypted/Obscure</b> Field here]]></comment>
 					<backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
 					<config_path>allconfig/simplefields/encrypted_field</config_path>
 				</field>
@@ -227,7 +227,7 @@
 					<label>Check if Url exists</label>
 					<comment>Enter Url, for example, www.google.com</comment>
 				</field>
-    	        <field id="button" translate="button_label" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+    	        <field id="button" translate="button_label" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label/>
                     <button_label>Test Curl Connection</button_label>
                     <frontend_model>Theshreyas\SystemXML\Block\Adminhtml\System\Config\CheckUrl</frontend_model>
@@ -243,55 +243,32 @@
                     <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
                 </field>
             </group>
+            <group id="cron_frequency" translate="label" sortOrder="4" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Cron Settings</label>
+                <field id="frequency" translate="label" type="select" sortOrder="6" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Frequency</label>
+                    <source_model>Theshreyas\SystemXML\Model\Adminhtml\System\Config\Source\CronFrequencyTypes::getCronFrequencyTypes</source_model>
+                    <backend_model>Theshreyas\SystemXML\Model\Adminhtml\System\Config\Backend\ReindexCron</backend_model>
+                </field>
+                <field id="interval" translate="label comment" type="select" sortOrder="7" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Interval</label>
+                    <source_model>Magento\Reminder\Model\Config\Source\CronMinutes::getCronMinutes</source_model>
+                    <comment>Set this value equal or greater to your Magento cron job launch period.</comment>
+                    <depends>
+                        <field id="frequency">I</field>
+                    </depends>
+                </field>
+                <field id="minutes" translate="label comment" type="text" sortOrder="8" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Minute of the Hour</label>
+                    <comment>Valid range: 0-59 (default 0).</comment>
+                    <depends>
+                        <field id="frequency">H</field>
+                    </depends>
+                </field>
+                <field id="time" translate="label" type="time" sortOrder="9" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Start Time</label>
+                </field>
+            </group>
 		</section>
 	</system>
 </config>
-
-<!-- simple fields textfield,textarea,radiotoggle,datepicker,datetimepicker, colorpicker,readonly,not editable
-dropdowns
-depends
-validations normal 5-6, custom
-complex -> ajax call,button, plugins,observer,graphql,info block, custom image, dynamic rows
-
-
-Custom Source Models
-https://github.com/magevision/blog/tree/master/CustomSourceModelConfiguration/app/code/MageVision/Blog5
-
-Set store configuration using data patches
-https://github.com/magevision/blog/tree/master/StoreConfigurationUsingDataPatch/app/code/MageVision/Blog79
-
-https://webkul.com/blog/how-to-add-color-picker-in-magento-2-admin-configuration/
-https://webkul.com/blog/magento-2-how-to-configure-and-customize-system-xml/
-
-button
-https://www.mageworx.com/magento-2-others-also-bought.html
-
-Custom Validation
-https://github.com/magevision/blog/tree/master/AddCustomValidationSystemConfigurationField/app/code/MageVision/Blog48
-
-Dynamic rows with image upload,select ,multiselect
-https://magento.stackexchange.com/a/354949
-https://magento.stackexchange.com/a/354065
-get value https://magento.stackexchange.com/a/272175
-
-exhaustive baseurl 
-https://devhooks.in/blog/add-dynamic-row-on-store-configuration-in-magento-2
-
-radio checkbox
-https://magento.stackexchange.com/questions/256587/magento-2-toggle-switch-yes-no-in-admin-config-of-custom-module-using-system-x
-default systemconfig=>
-catalog->catalog->product alerts run settings
-product image placeholders-> file upload
-catalog search test connection
-date& time custom options
-advanced system cron->subgroups
-
-button-> advanced system->scheduled
-https://stackoverflow.com/a/74967955
-
-all mysql operations
-print all differnt urls 
-print all different dates
-https://gist.github.com/molotovbliss/866d889e76d206c66a127d4227382a6b
-https://gist.github.com/molotovbliss/a989f7894dd72b0ddc5b2332f915407d
- -->

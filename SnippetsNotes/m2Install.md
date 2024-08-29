@@ -1,7 +1,45 @@
 **Magento Manual Installation steps**
 
-php required extensions
-php8.3-intl dom mysql
+*install nginx*
+sudo apt update
+sudo apt install nginx
+
+*install php8.3*
+sudo add-apt-repository ppa:ondrej/php
+sudo apt update
+sudo apt install php8.3 php8.3-cli php8.3-fpm php8.3-{bcmath,ctype,curl,dom,fileinfo,filter,gd,hash,iconv,intl,json,libxml,mbstring,openssl,pcre,pdo_mysql,simplexml,soap,sockets,sodium,spl,tokenizer,xmlwriter,xsl,zip,zlib,libxml}
+update php.ini settings
+
+*install mysql*
+sudo apt install mysql-server
+sudo mysql
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+sudo mysql_secure_installation
+
+*install elasticsearch*
+wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo gpg --dearmor -o /usr/share/keyrings/elasticsearch-keyring.gpg
+echo "deb [signed-by=/usr/share/keyrings/elasticsearch-keyring.gpg] https://artifacts.elastic.co/packages/8.x/apt stable main" | sudo tee /etc/apt/sources.list.d/elastic-8.x.list
+sudo apt update && sudo apt install elasticsearch
+sudo systemctl start elasticsearch
+sudo systemctl enable elasticsearch
+sudo nano /etc/elasticsearch/elasticsearch.yml
+<!-- ----- -->
+node.name: "ubuntu"
+cluster.name: magento 2.4.7
+network.host: 127.0.0.1
+http.port: 9200
+xpack.security.enabled: false
+<!-- ----- -->
+sudo systemctl restart elasticsearch 
+curl -X GET "localhost:9200/"
+https://www.linuxtuto.com/how-to-install-magento-2-4-7-on-ubuntu-24-04
+
+*install composer*
+sudo apt install composer
+check composer path
+composer config --list --global | grep 'home'
+update auth.json with your keys
+/home/shreyas/.config/composer/auth.json
 
 ```sh
 cd /var/www/html
@@ -19,7 +57,6 @@ run setup:install
 then setup:up c:f
 
 for DB clean--
-
 create db m3
 
 sudo service elasticsearch start
@@ -40,7 +77,7 @@ bin/magento setup:install \
 --timezone=America/Chicago \
 --use-rewrites=1 \
 --search-engine=elasticsearch7 --elasticsearch-host="localhost" --elasticsearch-port=9200 \
---cleanup-database;
+--cleanup-database;//updatesearchengine
 
 php bin/magento config:set admin/security/admin_account_sharing 1
 php bin/magento config:set admin/security/session_lifetime 30000
@@ -55,7 +92,9 @@ bin/magento module:disable Magento_AdminAdobeImsTwoFactorAuth Magento_TwoFactorA
 php bin/magento sampledata:deploy
 php bin/magento cache:flush
 
-Create
+--nginx config--
+create nginx.conf in magentorootdir
+edit fastcgi_backend -> fastcgi_backend_m3
 add m3 in sites-available
 update default in sites-available
 create symlink
@@ -68,3 +107,18 @@ sudo service nginx restart
 
 sudo rm -rf var/cache/* var/view_preprocessed/* var/page_cache/* generated/* pub/static/frontend/* pub/static/adminhtml/* && sudo php bin/magento setup:up && sudo php bin/magento s:d:c && sudo php bin/magento s:s:d -f &&  sudo php bin/magento cache:c && sudo php bin/magento cache:f
 ```
+*setup rabbitmq*
+https://www.rabbitmq.com/docs/install-debian
+```sh
+'queue' =>  [
+    'amqp' =>  [
+        'host' => '34.222.345.76', //host of RabbitMQ
+        'port' => '5672', //Port on which RabbitMQ running. 5672 is default port
+        'user' => 'admin', // RabbitMQ user name
+        'password' => 'xxxxxxxxxxxxx', //RabbitMQ password
+        'virtualhost' => '/', //The virtual host for connecting to RabbitMQ. The default is /.
+        'ssl' => '',
+    ],
+],
+```
+*setup & test cron*

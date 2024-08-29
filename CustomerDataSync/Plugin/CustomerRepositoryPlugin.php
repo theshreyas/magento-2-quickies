@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Shrm\CustomerDataSync\Plugin;
+namespace Theshreyas\CustomerDataSync\Plugin;
 
 use Magento\Customer\Api\CustomerRepositoryInterface;
 use Magento\Customer\Api\Data\CustomerInterface;
@@ -10,11 +10,12 @@ use Magento\Customer\Api\Data\CustomerInterface;
 class CustomerRepositoryPlugin
 {
     /**
-     * @param \Shrm\CustomerDataSync\Helper\AddressDataSync $addressDataSync
+     * @param \Theshreyas\CustomerDataSync\Helper\AddressDataSync $addressDataSync
      */
     public function __construct(
-        protected \Shrm\CustomerDataSync\Helper\AddressDataSync $addressDataSync
-    ) { }
+        protected \Theshreyas\CustomerDataSync\Helper\AddressDataSync $addressDataSync
+    ) {
+    }
 
     /**
      * Save Data Sync Timestamp

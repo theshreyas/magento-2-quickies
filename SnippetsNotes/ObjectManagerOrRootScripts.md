@@ -232,4 +232,6 @@ foreach ($customers as $key => $value) {
 }
 
 todo load customer by id
+load product by id correct method
 load customer by resourcemodel / model (factory deprecated)
+fetch store configuration,fetch request params
