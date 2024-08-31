@@ -9,6 +9,10 @@ This module adds product links in the following sections at the backend panel:
 3. On Product view page, for Bundle Product & Grouped Product children items (For configurable its already there)
 4. On Product View page, for Related Products, UpSell Products, CrossSell Products
 
+No need to search the product manually.
+
+Raise issue for any bug/feature request.
+
 ## Screenshots
 ![Screenshot1](https://raw.githubusercontent.com/theshreyas/magento-2-quickies/main/media/AdminProductLinksBundleProductView.png)
 

@@ -2,7 +2,7 @@
 This script can be used to place test orders quickly using graphql APIs. Normally, we have to use postman or altair to test graphql queries, but constantly changing quote ids/tokens hinders the process.
 
 ## Screenshots
-![Screenshot1](https://raw.githubusercontent.com/theshreyas/magento-2-quickies/main/media/MassProductUpdate.png)
+![Screenshot1](https://raw.githubusercontent.com/theshreyas/magento-2-quickies/main/media/GraphQLApiTester.png)
 
 [Watch the video](https://www.awesomescreenshot.com/video/31047374?key=cec0beb9cf37e20fce21e6f00b947694)
 
