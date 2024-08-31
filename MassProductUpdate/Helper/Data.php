@@ -40,7 +40,6 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
             $command = $this->objectManager->create($className);
             $result = $command->getCreationData();
             $result['url'] = $this->urlBulder->getUrl('theshreyas_massproductupdate/massaction/index');
-            //echo '<pre>'; print_r($result); exit;
         } else {
             /* initialization for delimiter lines*/
             $result = [

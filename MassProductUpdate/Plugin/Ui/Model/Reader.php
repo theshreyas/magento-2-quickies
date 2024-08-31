@@ -17,7 +17,6 @@ class Reader extends AbstractReader
     ) {
 
         $availableOptions = $this->helper->getMassUpdateOptions();
-        //echo '<pre>'; print_r($availableOptions); exit;
         if ($this->moduleManager->isOutputEnabled('Theshreyas_MassProductUpdate') &&
             isset($result['children']['listing_top']['children']['listing_massaction']['children']) &&
             isset($result['children']['product_listing_data_source'])

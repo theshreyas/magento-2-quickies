@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Bundle\Ui\DataProvider\Product\Form\Modifier\Composite">
+        <plugin name="Theshreyas_AdminProductLinks_Plugin_Backend_Magento_Bundle_Ui_DataProvider_Product_Form_Modifier_Composite" type="Theshreyas\AdminProductLinks\Plugin\Backend\Magento\Bundle\Ui\DataProvider\Product\Form\Modifier\Composite" sortOrder="10" disabled="false"/>
+    </type>
+    <type name="Magento\Bundle\Ui\DataProvider\Product\Form\Modifier\BundlePanel">
+        <plugin name="Theshreyas_AdminProductLinks_Plugin_Backend_Magento_Bundle_Ui_DataProvider_Product_Form_Modifier_BundlePanel" type="Theshreyas\AdminProductLinks\Plugin\Backend\Magento\Bundle\Ui\DataProvider\Product\Form\Modifier\BundlePanel" sortOrder="11" disabled="false"/>
+    </type>
+    <preference for="Magento\Catalog\Block\Adminhtml\Category\Tab\Product" type="Theshreyas\AdminProductLinks\Block\Adminhtml\Category\Tab\Product" />
+    <preference for="Magento\GroupedProduct\Ui\DataProvider\Product\Form\Modifier\Grouped" type="Theshreyas\AdminProductLinks\Ui\DataProvider\Product\Form\Modifier\Grouped" />
+    <preference for="Magento\Catalog\Ui\DataProvider\Product\Form\Modifier\Related" type="Theshreyas\AdminProductLinks\Ui\DataProvider\Product\Form\Modifier\Related" />
+</config>

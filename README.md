@@ -1,26 +1,26 @@
 # magento-2-quickies
 
-**All tested on Magento 2.4.6**
+**All tested on atleast Magento 2.4.6**
 
 **Adminlogo** - Change various logos in the admin panel
+
+**AdminProductLinks** - This module adds product links in the various sections at the backend like order view->items, bundle children, grouped children, etc.
 
 **CatalogDeleteACL** - Provide separate ACL for category & product delete access (for api as well)
 
 **CmsImage** - Add Image attribute in CMS Page 
 
+**CustomerDataSync** - This module adds `data_sync` fields in customer and customer_address, and updates it with timestamp values whenever customer or address is created or updated via APIs.
+
 **FormatIncrementId** - Format Magento Increment Id (Reduce Length/Remove Zero-padding/Add Prefix) [Read more here](https://www.classyllama.com/blog/m2-incrementid)
 
 **FrontendDisable** - Disable Magento frontend & Redirect to Admin/HomePage/Custom URL
 
-**Amazonpay GraphQl** - Amazonpay Graphql support added(tested on 2.3.4)
-(Deprecated. AmazonPay has added graphql support now)
-
-**DynamicAttributesGraphql GraphQl** (2.3)
-Graphql products query returns only ids for select or multiselect fields. This is quickfix which will allow to get Text Labels as well as Id Values.
-
 **FetchProductById GraphQl** - Fetch Product by productid using GraphQl
 
 **RequestedQtyGraphQlBug GraphQl** - Magento 2 [Core Bug](https://github.com/magento/magento2/issues/33281) Fix
+
+**GraphQLTester** - Customizable handy tool to test Graphql Order Flow quickly,
 
 **GuestStockAlert** - Implemented Default Product stock alerts for guests as well.
 
@@ -28,11 +28,13 @@ Graphql products query returns only ids for select or multiselect fields. This i
 
 **MoveOutofStockToLast** - This module Display out of stock products to the end of category page.
 
-**OrderGridExport** - This module provides additional options in admin order grid export, like 'export xls' and 'export custom csv'.
+**OrderGridExport**,**ProductGridExport** - This module provides additional options in admin order & product grid export, like 'export xls' and 'export custom csv'.
 
 **RenameCountry** - Rename Country
 
 **SetupDataWithCSV** - Setup Data Patch for Bulk upload through CSV
+
+**ShowHeaderFooteronCheckout** - Display Header-Footer on Checkout Pages
 
 **SystemXML** - All System Configurations Reference with examples
 
