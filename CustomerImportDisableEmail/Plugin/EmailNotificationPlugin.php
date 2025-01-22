@@ -1,6 +1,6 @@
 <?php
 
-namespace Shrm\CustomerStopEmail\Plugin;
+namespace Theshreyas\CustomerImportDisableEmail\Plugin;
 
 use Magento\Customer\Api\Data\CustomerInterface;
 use Magento\Customer\Model\EmailNotification as CustomerEmailNotification;

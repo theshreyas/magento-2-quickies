@@ -2,7 +2,7 @@
 This script can be used to place test orders quickly using graphql APIs. Normally, we have to use postman or altair to test graphql queries, but constantly changing quote ids/tokens hinders the process.
 
 ## Screenshots
-![Screenshot1](https://raw.githubusercontent.com/theshreyas/magento-2-quickies/main/media/GraphQLApiTester.png)
+![Screenshot1](https://raw.githubusercontent.com/theshreyas/magento-2-quickies/main/media/MagentoGraphQlOrderFlowTester.gif)
 
 [Watch the video](https://www.awesomescreenshot.com/video/31047374?key=cec0beb9cf37e20fce21e6f00b947694)
 
@@ -26,7 +26,7 @@ location ~ ^/(index|get|static|errors/report|errors/404|errors/503|health_check|
 localmagentourl/graphql.php
 
 # Notes
-I have covered minimum basic apis to complete order flow, with only simple product types. You can modify graphql.php to add any api.
+I have covered minimum basic apis to complete order flow, with only simple product types. You can modify graphql.php to add any new api. To modify the existing graphql queries/mutations, update graphqlQueries.php. 
 
 # Support
-Raise issue, if you want to add any functionality here.
+Raise issue, if you want to request any feature/improvement/bug report.

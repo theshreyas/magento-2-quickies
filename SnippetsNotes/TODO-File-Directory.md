@@ -29,6 +29,17 @@ $this->dir->getRoot().'/vendor'; // Output: /var/www/html/m2/vendor
 $this->storeManager->getStore()->getBaseUrl(); // http://m2.test/
 ```
 
+Check if file/folder exists (works for both)
+
+```sh
+# \Magento\Framework\Filesystem\Driver\File $fileDriver
+$fileOrFolderPath = '/var/www/html/m3/var/log/system.log';
+if ($this->fileDriver->isExists($fileOrFolderPath)) {
+    echo "file exist";
+} else {
+    echo "file does not exist";
+}
+```
 
 1.create file/folder if not exists
 2.check if file/folder exists

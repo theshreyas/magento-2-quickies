@@ -16,12 +16,17 @@ $today = date('l \t\h\e jS');                   // Saturday the 10th
 ```
 
 ```sh
-$d = strtotime("10:30pm April 15 2014");
-echo "Created date is " . date("Y-m-d h:i:sa", $d);
+# Parse English textual datetimes into Unix timestamps:
+$d = strtotime("10:30pm April 15 2014"); //1397601000
+echo "Created date is " . date("Y-m-d h:i:sa", $d); //2014-04-15 10:30:00pm
+```
+
+```sh
+# Return the current time as a Unix timestamp,
+echo time(); //1727194386
 ```
 
 https://stackoverflow.com/a/40484613
-
 
 ```sh
 * @param \Magento\Framework\Stdlib\DateTime\TimezoneInterface $timezone

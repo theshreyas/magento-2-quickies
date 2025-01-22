@@ -12,6 +12,8 @@
 	e.two modules altering same table?
 	f.uninstall via command VS deleting directory and s:up
 	
+module:disable vs module:uninstall vs composer remove
+
 php bin/magento module:uninstall -r Hyva_Admin Hyva_AdminTest
 composer remove hyva-themes/module-magento2-admin
 composer remove hyva-themes/module-magento2-admin-test

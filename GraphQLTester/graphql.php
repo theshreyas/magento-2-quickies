@@ -406,7 +406,6 @@ function curlCall($query, $variables = [], $headers = []) {
                     ...extraparams
                 };
                 let startTime = Date.now();
-
                 fetch('graphql.php', {
                     method: 'POST',
                     headers: {

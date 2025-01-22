@@ -12,6 +12,8 @@
 
 **CustomerDataSync** - This module adds `data_sync` fields in customer and customer_address, and updates it with timestamp values whenever customer or address is created or updated via APIs.
 
+**CustomerImportDisableEmail** - This module disables customer welcome email, based on backend configurations & for bulk customer import
+
 **FormatIncrementId** - Format Magento Increment Id (Reduce Length/Remove Zero-padding/Add Prefix) [Read more here](https://www.classyllama.com/blog/m2-incrementid)
 
 **FrontendDisable** - Disable Magento frontend & Redirect to Admin/HomePage/Custom URL
