@@ -42,6 +42,6 @@ if ($this->fileDriver->isExists($fileOrFolderPath)) {
 ```
 
 1.create file/folder if not exists
-2.check if file/folder exists
-3.count no of files in a folder
-4.copy/move/rename/delete/create file
+2.count no of files in a folder
+3.copy/move/rename/delete/create file
+4.create csv file

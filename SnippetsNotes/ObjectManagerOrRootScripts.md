@@ -221,7 +221,8 @@ configurable child options
 bundle child options
 grouped child options
 ```
-get customer collection
+**Get customer collection**
+```sh
 $customers     = $objectManager->create('\Magento\Customer\Model\ResourceModel\Customer\CollectionFactory');
 $customers = $customers->create();
 $customers->setOrder('entity_id','DESC');
@@ -230,8 +231,11 @@ $customers->setPageSize(5);
 foreach ($customers as $key => $value) {
   print_r($value->getData());
 }
+```
 
+```sh
 todo load customer by id
 load product by id correct method
 load customer by resourcemodel / model (factory deprecated)
 fetch store configuration,fetch request params
+```

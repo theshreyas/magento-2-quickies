@@ -45,7 +45,7 @@ foreach($methods as $method)
 file_put_contents(BP . '/var/log/ShreyasMethod.log', print_r(get_class($exception), true) . PHP_EOL, FILE_APPEND);
 ```
 
-# log all sql queries #1
+# Log all sql queries #1
 
 ```sh
 vendor/magento/framework/DB/Statement/Pdo/Mysql.php
@@ -53,7 +53,7 @@ inside _execute function before "if ($specialExecute) {"
 file_put_contents(BP . '/var/log/ShreyasParams.log', print_r($this->_stmt->queryString, true) . PHP_EOL . (!empty($params) ? json_encode($params, true) . PHP_EOL : ''), FILE_APPEND);
 ```
 
-# log all sql queries #2
+# Log all sql queries #2
 ```sh
 // in app/etc/di.xml
 // change the following lines
@@ -72,8 +72,10 @@ file_put_contents(BP . '/var/log/ShreyasParams.log', print_r($this->_stmt->query
 https://magento.stackexchange.com/a/370747
 
 https://www.mageplaza.com/devdocs/how-write-log-magento-2.html
+```sh
 \Psr\Log\LoggerInterface $logger
 $this->_logger->debug
 $this->_logger->info
 $this->_logger->error
 $this->_logger->critical
+```

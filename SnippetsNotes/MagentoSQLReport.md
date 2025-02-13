@@ -103,7 +103,7 @@ INNER JOIN `catalog_product_entity` as PARENT_CPE ON PARENT_CPE.entity_id = CHIL
 ORDER BY ParentSku ASC
 ```
 
-/*
-Where customer address has lastname same as firstname, replace lastname with correct value from main customer data
-*/
+#Where customer address has lastname same as firstname, replace lastname with correct value from main customer data
+```sh
 UPDATE customer_address_entity_varchar cv RIGHT JOIN (SELECT c.entity_id, cev.value as firstname, cevx.value as lastname, ce.entity_id as address_id FROM customer_entity c LEFT JOIN customer_entity_varchar cev ON c.entity_id = cev.entity_id LEFT JOIN customer_entity_varchar cevx ON c.entity_id = cevx.entity_id LEFT JOIN customer_address_entity ce ON c.entity_id = ce.parent_id WHERE cev.attribute_id=5 AND cevx.attribute_id=7) c ON c.address_id = cv.entity_id SET cv.value = lastname WHERE cv.attribute_id=22 AND firstname = cv.value 
+```

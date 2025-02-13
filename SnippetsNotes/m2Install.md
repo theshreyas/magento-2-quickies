@@ -97,6 +97,8 @@ php bin/magento config:set admin/usage/enabled 0
 php bin/magento config:set analytics/subscription/enabled 0
 php bin/magento config:set graphql/session/disable 1
 php bin/magento config:set oauth/consumer/enable_integration_as_bearer 1
+php bin/magento config:set admin/security/password_lifetime 0
+php bin/magento config:set admin/security/password_is_forced 0
 php bin/magento config:set webapi/jwtauth/admin_expiration 600
 php bin/magento config:set webapi/jwtauth/customer_expiration 600
 bin/magento module:disable Magento_AdminAdobeImsTwoFactorAuth Magento_TwoFactorAuth

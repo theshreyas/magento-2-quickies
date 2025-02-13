@@ -31,7 +31,7 @@ https://stackoverflow.com/a/40484613
 ```sh
 * @param \Magento\Framework\Stdlib\DateTime\TimezoneInterface $timezone
 protected \Magento\Framework\Stdlib\DateTime\TimezoneInterface $timezone,
-$date = $this->timezone->date()->format('Ymdu');                   // 20231003236738
+$date = $this->timezone->date()->format('Ymdu'); // 20231003236738
 ```
 
 compare dates
